@@ -9,7 +9,9 @@
     <author>Stevie Graham/Lyle Pratt/Jeff Linwood</author>
     <license>Apache</license>
 
-    <asset src="www/tcPlugin.js" target="js/tcPlugin.js" />
+    <js-module src="www/tcPlugin.js" name="TCPlugin">
+        <clobbers target="Twilio"/>
+    </js-module>
 
     <!-- android -->
     <platform name="android">
@@ -44,7 +46,7 @@ You need to download __Twilio Client for Android__ from https://www.twilio.com/d
     <!-- ios -->
     <platform name="ios">
         <!-- Add the Twilio Client plugin to the iOS app's config.xml -->
-        <config-file target="config.xml" parent="widget">
+        <config-file target="config.xml" parent="/*">
           <feature name="TCPlugin">
             <param name="ios-package"
                 value="TCPlugin"/>
